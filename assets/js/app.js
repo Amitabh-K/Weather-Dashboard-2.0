@@ -229,3 +229,10 @@ function clearSearch() {
     search.removeChild(search.firstChild);
   }
 }
+
+// clear children of search button
+function clearSearchButton() {
+  while (searchBtn.hasChildNodes()) {
+    searchBtn.removeChild(searchBtn.firstChild);
+  }
+}
