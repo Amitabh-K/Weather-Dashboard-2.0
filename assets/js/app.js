@@ -1,5 +1,3 @@
-
-
 // user’s current location with window.navigator.geolocation.
 
 function getLocation() {
@@ -9,7 +7,7 @@ function getLocation() {
     lat = position.coords.latitude;
     console.log("Latitude: " + lat + " Longitude " + long)
     // currentWeather ajax call
-    currentWeatherUrl = `${baseUrl}weather?lat=${lat}&lon=${long}&units=imperial&appid=${apiKey}`;
+    currentWeatherUrl = `${baseUrl}weather?lat=${lat}&lon=${long}&units=metric&appid=${apiKey}`;
     ajaxCall(currentWeatherUrl);
   })
 }
@@ -72,8 +70,6 @@ function currentWeather() {
   ajaxCall(UVindexUrl);
 }
 
-
-
 // uv inex function
 
 function UVindex() {
@@ -96,7 +92,7 @@ function UVindex() {
   }
   button.textContent = data.value;
   // call forecast ajax
-  forecastUrl = `${baseUrl}forecast?lat=${lat}&lon=${long}&units=imperial&appid=${apiKey}`;
+  forecastUrl = `${baseUrl}forecast?lat=${lat}&lon=${long}&units=metric&appid=${apiKey}`;
   ajaxCall(forecastUrl);
 }
 
@@ -130,7 +126,8 @@ function forecast() {
     text3.textContent = `Humidity: ${data.list[i].main.humidity}%`;
     div2.appendChild(text3);
   }
-
+// hide loading spinner
+document.querySelector("#loading-column").setAttribute("style", "display: none");
 // show weather information
 document.querySelector("#current-weather-column").classList.remove("d-none");
 // clear children of search button and generate search icon
@@ -139,7 +136,6 @@ var searchIcon = document.createElement("i");
 searchIcon.className = "fas fa-search";
 searchBtn.appendChild(searchIcon);
 }
-
 
 // icons equivalent to openweathermap icon codes
 var weatherIcon = {
@@ -209,7 +205,7 @@ var spinnerSp2 = document.createElement("span");
 spinnerSp2.setAttribute("class", "sr-only");
 spinnerSp2.textContent = "Loading...";
 searchBtn.appendChild(spinnerSp2);
-currentCityWeatherUrl = `${baseUrl}weather?q=${city}&units=imperial&appid=${apiKey}`;
+currentCityWeatherUrl = `${baseUrl}weather?q=${city}&units=metric&appid=${apiKey}`;
 ajaxCall(currentCityWeatherUrl);
 saveCities();
 
@@ -279,6 +275,6 @@ previousSearch.addEventListener("click", function () {
   // convert search value to all caps
   city = event.target.textContent
   console.log(city);
-  currentCityWeatherUrl = `${baseUrl}weather?q=${city}&units=imperial&appid=${apiKey}`;
+  currentCityWeatherUrl = `${baseUrl}weather?q=${city}&units=metric&appid=${apiKey}`;
   ajaxCall(currentCityWeatherUrl);
 })
