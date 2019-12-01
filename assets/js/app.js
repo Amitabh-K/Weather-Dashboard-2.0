@@ -236,3 +236,39 @@ function clearSearchButton() {
     searchBtn.removeChild(searchBtn.firstChild);
   }
 }
+
+// saving searches to local storage & create buttons which can be used for search
+var storedCities;
+var saveCity;
+
+function saveCities() {
+  saveCity = [{ cityName: city }];
+  storedCities = JSON.parse(localStorage.getItem("cities"));
+  // if no values stored, create the object
+  if (storedCities == null) {
+    localStorage.setItem("cities", JSON.stringify(saveCity));
+    // create the button for the first city
+    let city1 = document.createElement("button");
+    city1.setAttribute("class", "btn bg-white border btn-block w-100 text-left");
+    city1.setAttribute("type", "submit");
+    city1.textContent = saveCity[0].cityName;
+    document.querySelector("#previous-search").appendChild(city1);
+  }
+  else {
+    storedCities.push({ cityName: city });
+    console.log(storedCities.length);
+    localStorage.setItem("cities", JSON.stringify(storedCities));
+    // clear buttons for all cities 
+    clearSearch();
+    // create buttons for all cities
+    for (i = 0; i < storedCities.length; i++) {
+      let newCity = document.createElement("button");
+      newCity.setAttribute("class", "btn bg-white border btn-block w-100 text-left");
+      newCity.setAttribute("type", "submit");
+      newCity.textContent = storedCities[i].cityName;
+      document.querySelector("#previous-search").appendChild(newCity);
+    }
+  }
+}
+
+
