@@ -213,5 +213,12 @@ currentCityWeatherUrl = `${baseUrl}weather?q=${city}&units=imperial&appid=${apiK
 ajaxCall(currentCityWeatherUrl);
 saveCities();
 
-
   })
+
+  // clear children of card deck
+function clearChildren() {
+  var deck = document.querySelector(".card-deck");
+  while (deck.hasChildNodes()) {
+    deck.removeChild(deck.firstChild);
+  }
+}
