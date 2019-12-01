@@ -99,3 +99,45 @@ function UVindex() {
   forecastUrl = `${baseUrl}forecast?lat=${lat}&lon=${long}&units=imperial&appid=${apiKey}`;
   ajaxCall(forecastUrl);
 }
+
+
+// five day forecast
+function forecast() {
+  // clear previous forecast cards in deck
+  clearChildren();
+  // loop to dynamically generate each forecast card within deck
+  for (var i = 4; i < data.list.length; i += 8) {
+    var div1 = document.createElement("div");
+    div1.className = "card bg-light";
+    document.querySelector(".card-deck").appendChild(div1);
+    var div2 = document.createElement("div");
+    div2.className = "card-body";
+    div1.appendChild(div2);
+    var text1 = document.createElement("h5");
+    text1.className = "card-title";
+    text1.textContent = `${data.list[i].dt_txt.slice(5, 7)}/${data.list[i].dt_txt.slice(8, 10)}/${data.list[i].dt_txt.slice(0, 4)}`;
+    div2.appendChild(text1);
+    var icon = document.createElement("h3");
+    var iconNumber = data.list[i].weather[0].icon
+    icon.className = weatherIcon[iconNumber];
+    div2.appendChild(icon);
+    var text2 = document.createElement("h6");
+    text2.className = "text-muted";
+    text2.textContent = `Temp: ${data.list[i].main.temp.toFixed(1)} ºF`;
+    div2.appendChild(text2);
+    var text3 = document.createElement("h6");
+    text3.className = "text-muted";
+    text3.textContent = `Humidity: ${data.list[i].main.humidity}%`;
+    div2.appendChild(text3);
+  }
+
+
+
+// show weather information
+document.querySelector("#current-weather-column").classList.remove("d-none");
+// clear children of search button and generate search icon
+clearSearchButton();
+var searchIcon = document.createElement("i");
+searchIcon.className = "fas fa-search";
+searchBtn.appendChild(searchIcon);
+}
