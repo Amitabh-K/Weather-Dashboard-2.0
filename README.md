@@ -1,1 +1,2 @@
-# Weather-Dashboard-2.0-
+# Weather-Dashboard
+Build a weather dashboard application with search functionality 
