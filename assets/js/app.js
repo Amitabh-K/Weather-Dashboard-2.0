@@ -59,12 +59,12 @@ function currentWeather() {
   long = data.coord.lon
   // overwrite current conditions
   document.querySelector("#city").textContent = `${data.name} (${moment().format("MMM Do, YYYY")})`;
-  document.querySelector("#temp").textContent = `Temperature: ${data.main.temp.toFixed(1)} ºF`;
+  document.querySelector("#temp").textContent = `Temperature: ${data.main.temp.toFixed(0)} ºC`;
   document.querySelector("#humidity").textContent = `Humidity: ${data.main.humidity}%`;
-  document.querySelector("#wind-speed").textContent = `Wind Speed: ${data.wind.speed} MPH`;
+  document.querySelector("#wind-speed").textContent = `Wind Speed: ${data.wind.speed.toFixed(0)} MPH`;
   // jumbotron image change ( image to be added later)
   var currentIcon = data.weather[0].icon;
-  document.querySelector(".jumbotron").setAttribute("style", `background-image: url("./assets/images/${weatherImg[currentIcon]}.jpg")`);
+  document.querySelector(".current-weather").setAttribute("style", `background-image: url("./assets/images/${weatherImg[currentIcon]}.jpg")`);
   // call UVindex ajax
   UVindexUrl = `${baseUrl}uvi?appid=${apiKey}&lat=${lat}&lon=${long}`;
   ajaxCall(UVindexUrl);
@@ -88,7 +88,7 @@ function UVindex() {
     button.className = "btn btn-danger btn-lg";
   }
   else if (data.value >= 11) {
-    button.className = "btn btn-purple btn-lg";
+    button.className = "btn btn-dark btn-lg";
   }
   button.textContent = data.value;
   // call forecast ajax
@@ -104,7 +104,7 @@ function forecast() {
   // loop to dynamically generate each forecast card within deck
   for (var i = 4; i < data.list.length; i += 8) {
     var div1 = document.createElement("div");
-    div1.className = "card bg-light";
+    div1.className = "card bg-primary";
     document.querySelector(".card-deck").appendChild(div1);
     var div2 = document.createElement("div");
     div2.className = "card-body";
@@ -118,11 +118,11 @@ function forecast() {
     icon.className = weatherIcon[iconNumber];
     div2.appendChild(icon);
     var text2 = document.createElement("h6");
-    text2.className = "text-muted";
-    text2.textContent = `Temp: ${data.list[i].main.temp.toFixed(1)} ºF`;
+    text2.className = "text-dark font-weight-bold";
+    text2.textContent = `Temp: ${data.list[i].main.temp.toFixed(1)} ºC`;
     div2.appendChild(text2);
     var text3 = document.createElement("h6");
-    text3.className = "text-muted";
+    text3.className = "text-dark font-weight-bold";
     text3.textContent = `Humidity: ${data.list[i].main.humidity}%`;
     div2.appendChild(text3);
   }
@@ -137,26 +137,27 @@ searchIcon.className = "fas fa-search";
 searchBtn.appendChild(searchIcon);
 }
 
+
 // icons equivalent to openweathermap icon codes
 var weatherIcon = {
-  "01d": "fas fa-sun",
-  "01n": "fas fa-sun",
-  "02d": "fas fa-cloud-sun",
-  "02n": "fas fa-cloud-sun",
-  "03d": "fas fa-cloud",
-  "03n": "fas fa-cloud",
-  "04d": "fas fa-cloud",
-  "04n": "fas fa-cloud",
-  "09d": "fas fa-cloud-rain",
-  "09n": "fas fa-cloud-rain",
-  "10d": "fas fa-cloud-showers-heavy",
-  "10n": "fas fa-cloud-showers-heavy",
-  "11d": "fas fa-bolt",
-  "11n": "fas fa-bolt",
-  "13d": "fas fa-snowflake",
-  "13n": "fas fa-snowflake",
-  "50d": "fas fa-smog",
-  "50n": "fas fa-smog",
+  "01d": "fas fa-sun text-light",
+  "01n": "fas fa-sun text-light",
+  "02d": "fas fa-cloud-sun text-light",
+  "02n": "fas fa-cloud-sun text-light",
+  "03d": "fas fa-cloud text-light",
+  "03n": "fas fa-cloud text-light",
+  "04d": "fas fa-cloud text-light",
+  "04n": "fas fa-cloud text-light",
+  "09d": "fas fa-cloud-rain text-light",
+  "09n": "fas fa-cloud-rain text-light",
+  "10d": "fas fa-cloud-showers-heavy text-light",
+  "10n": "fas fa-cloud-showers-heavy text-light",
+  "11d": "fas fa-bolt text-light",
+  "11n": "fas fa-bolt text-light",
+  "13d": "fas fa-snowflake text-light",
+  "13n": "fas fa-snowflake text-light",
+  "50d": "fas fa-smog text-light",
+  "50n": "fas fa-smog text-light",
 }
 
 
