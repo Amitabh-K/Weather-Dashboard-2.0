@@ -71,3 +71,31 @@ function currentWeather() {
   UVindexUrl = `${baseUrl}uvi?appid=${apiKey}&lat=${lat}&lon=${long}`;
   ajaxCall(UVindexUrl);
 }
+
+
+
+// uv inex function
+
+function UVindex() {
+  var button = document.querySelector("#uv-button");
+  // set colors of button depending on UV-index
+  if (data.value < 3) {
+    button.className = "btn btn-success btn-lg";
+  }
+  else if (data.value >= 3 && data.value < 6) {
+    button.className = "btn btn-warning btn-lg";
+  }
+  else if (data.value >= 6 && data.value < 8) {
+    button.className = "btn btn-orange btn-lg";
+  }
+  else if (data.value >= 8 && data.value < 11) {
+    button.className = "btn btn-danger btn-lg";
+  }
+  else if (data.value >= 11) {
+    button.className = "btn btn-purple btn-lg";
+  }
+  button.textContent = data.value;
+  // call forecast ajax
+  forecastUrl = `${baseUrl}forecast?lat=${lat}&lon=${long}&units=imperial&appid=${apiKey}`;
+  ajaxCall(forecastUrl);
+}
