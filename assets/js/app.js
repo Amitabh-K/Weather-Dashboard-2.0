@@ -64,7 +64,7 @@ function currentWeather() {
   document.querySelector("#wind-speed").textContent = `Wind Speed: ${data.wind.speed.toFixed(0)} MPH`;
   // jumbotron image change ( image to be added later)
   var currentIcon = data.weather[0].icon;
-  document.querySelector(".current-weather").setAttribute("style", `background-image: url("./assets/images/${weatherImg[currentIcon]}.jpg")`);
+  document.querySelector(".all").setAttribute("style", `background-image: url("./assets/images/${weatherImg[currentIcon]}.jpg")`);
   // call UVindex ajax
   UVindexUrl = `${baseUrl}uvi?appid=${apiKey}&lat=${lat}&lon=${long}`;
   ajaxCall(UVindexUrl);
