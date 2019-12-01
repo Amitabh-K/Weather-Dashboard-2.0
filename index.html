@@ -14,11 +14,30 @@
 </head>
 
 <body>
-  <!-- Hardder -->
+  <!-- Heardder -->
 
     <div class="jumbotron sticky-top text-center">
         <h1 class="display-2 font-weight-bold" id="main-title">Weather Dashboard</h1>
     </div>
+    
+    <div class="container-fluid w-100">
+        <div class="row">
+            <!-- Left Search Column -->
+            <div class="col-3 bg-light">
+                <h4 id="search-title">Search for a City:</h4>
+                <!-- City Search -->
+                <form class="form-inline">
+                    <input type="text" class="form-control w-75" id="search-bar">
+                    <button type="submit" class="btn btn-primary" id="search-button"><i
+                            class="fas fa-search"></i></button>
+                </form>
+                <!-- Previous Search History -->
+                <form class="form">
+                    <div class="btn-group-vertical btn-group-lg w-100" id="previous-search"></div>
+                </form>
+            </div>
+
+
 
     <div class="row" id="current-weather">
         <div class="card w-100">
@@ -32,6 +51,18 @@
         </div>
     </div>
 
+                <!-- 5-Day Forecast Title -->
+                <div class="row">
+                    <h4 id="forecast-title">5-Day Forecast:</h4>
+                </div>
+                <!-- 5-Day Forecast Cards -->
+                <div class="row d-flex justify-content-center" id="forecast-cards">
+                    <div class="card-deck w-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src='./assets/js/app.js'></script>
