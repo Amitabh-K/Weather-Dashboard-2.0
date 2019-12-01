@@ -194,3 +194,10 @@ var city = "";
 // on-click direct to ajax call
 searchBtn.addEventListener("click", function () {
   event.preventDefault();
+   // convert search value to all caps
+   city = citySearch.value.toUpperCase();
+   console.log(city);
+
+
+   
+  })
