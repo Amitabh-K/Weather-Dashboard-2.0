@@ -64,7 +64,7 @@ function currentWeather() {
   document.querySelector("#temp").textContent = `Temperature: ${data.main.temp.toFixed(1)} ºF`;
   document.querySelector("#humidity").textContent = `Humidity: ${data.main.humidity}%`;
   document.querySelector("#wind-speed").textContent = `Wind Speed: ${data.wind.speed} MPH`;
-  // jumbotron image change
+  // jumbotron image change ( image to be added later)
   var currentIcon = data.weather[0].icon;
   document.querySelector(".jumbotron").setAttribute("style", `background-image: url("./assets/images/${weatherImg[currentIcon]}.jpg")`);
   // call UVindex ajax
