@@ -197,7 +197,21 @@ searchBtn.addEventListener("click", function () {
    // convert search value to all caps
    city = citySearch.value.toUpperCase();
    console.log(city);
+// clear search icon and create a spinner
+clearSearchButton()
+var spinnerSp1 = document.createElement("span");
+spinnerSp1.setAttribute("class", "spinner-border spinner-border-sm");
+spinnerSp1.setAttribute("id", "search-spinner");
+spinnerSp1.setAttribute("role", "status");
+spinnerSp1.setAttribute("aria-hidden", "true");
+searchBtn.appendChild(spinnerSp1);
+var spinnerSp2 = document.createElement("span");
+spinnerSp2.setAttribute("class", "sr-only");
+spinnerSp2.textContent = "Loading...";
+searchBtn.appendChild(spinnerSp2);
+currentCityWeatherUrl = `${baseUrl}weather?q=${city}&units=imperial&appid=${apiKey}`;
+ajaxCall(currentCityWeatherUrl);
+saveCities();
 
 
-   
   })
