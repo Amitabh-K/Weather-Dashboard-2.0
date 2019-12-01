@@ -162,3 +162,26 @@ var weatherIcon = {
   "50d": "fas fa-smog",
   "50n": "fas fa-smog",
 }
+
+
+// images equivalent to openweathermap icon codes
+var weatherImg = {
+  "01d": "sunny",
+  "01n": "night-clear",
+  "02d": "clouds",
+  "02n": "night-clouds",
+  "03d": "cloudy",
+  "03n": "cloudy",
+  "04d": "cloudy",
+  "04n": "cloudy",
+  "09d": "drizzle",
+  "09n": "night-rain",
+  "10d": "rain",
+  "10n": "night-rain",
+  "11d": "thunder",
+  "11n": "thunder",
+  "13d": "snow",
+  "13n": "snow",
+  "50d": "smog",
+  "50n": "smog",
+}
