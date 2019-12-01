@@ -17,10 +17,20 @@
   <!-- Hardder -->
 
     <div class="jumbotron sticky-top text-center">
-        <h1 class="display-3 font-weight-bold" id="main-title">Weather Dashboard</h1>
+        <h1 class="display-2 font-weight-bold" id="main-title">Weather Dashboard</h1>
     </div>
 
-
+    <div class="row" id="current-weather">
+        <div class="card w-100">
+            <div class="card-body bg-primary">
+                <h3 class="card-title" id="city"></h3><br>
+                <h5 class="text-dark" id="temp"></h5><br>
+                <h5 class="text-dark" id="humidity"></h5><br>
+                <h5 class="text-dark" id="wind-speed"></h5><br>
+                <h5 class="text-dark"><span id="uv-index">UV Index: <button id="uv-button"></button></span></h5>
+            </div>
+        </div>
+    </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
