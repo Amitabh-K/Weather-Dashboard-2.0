@@ -185,3 +185,9 @@ var weatherImg = {
   "50d": "smog",
   "50n": "smog",
 }
+
+// searching weather by city
+var searchBtn = document.querySelector("#search-button");
+var citySearch = document.querySelector("#search-bar");
+var city = "";
+
