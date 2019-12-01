@@ -271,4 +271,14 @@ function saveCities() {
   }
 }
 
-
+// event listener for search weather by clicking on previous city button 
+var previousSearch = document.querySelector("#previous-search");
+// on-click direct to ajax call
+previousSearch.addEventListener("click", function () {
+  event.preventDefault();
+  // convert search value to all caps
+  city = event.target.textContent
+  console.log(city);
+  currentCityWeatherUrl = `${baseUrl}weather?q=${city}&units=imperial&appid=${apiKey}`;
+  ajaxCall(currentCityWeatherUrl);
+})
