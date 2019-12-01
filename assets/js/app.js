@@ -131,8 +131,6 @@ function forecast() {
     div2.appendChild(text3);
   }
 
-
-
 // show weather information
 document.querySelector("#current-weather-column").classList.remove("d-none");
 // clear children of search button and generate search icon
@@ -140,4 +138,27 @@ clearSearchButton();
 var searchIcon = document.createElement("i");
 searchIcon.className = "fas fa-search";
 searchBtn.appendChild(searchIcon);
+}
+
+
+// icons equivalent to openweathermap icon codes
+var weatherIcon = {
+  "01d": "fas fa-sun",
+  "01n": "fas fa-sun",
+  "02d": "fas fa-cloud-sun",
+  "02n": "fas fa-cloud-sun",
+  "03d": "fas fa-cloud",
+  "03n": "fas fa-cloud",
+  "04d": "fas fa-cloud",
+  "04n": "fas fa-cloud",
+  "09d": "fas fa-cloud-rain",
+  "09n": "fas fa-cloud-rain",
+  "10d": "fas fa-cloud-showers-heavy",
+  "10n": "fas fa-cloud-showers-heavy",
+  "11d": "fas fa-bolt",
+  "11n": "fas fa-bolt",
+  "13d": "fas fa-snowflake",
+  "13n": "fas fa-snowflake",
+  "50d": "fas fa-smog",
+  "50n": "fas fa-smog",
 }
