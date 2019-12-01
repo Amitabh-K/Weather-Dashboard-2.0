@@ -222,3 +222,10 @@ function clearChildren() {
     deck.removeChild(deck.firstChild);
   }
 }
+// clear children of previous search
+function clearSearch() {
+  var search = document.querySelector("#previous-search");
+  while (search.hasChildNodes()) {
+    search.removeChild(search.firstChild);
+  }
+}
