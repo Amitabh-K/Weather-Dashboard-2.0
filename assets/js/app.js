@@ -191,3 +191,6 @@ var searchBtn = document.querySelector("#search-button");
 var citySearch = document.querySelector("#search-bar");
 var city = "";
 
+// on-click direct to ajax call
+searchBtn.addEventListener("click", function () {
+  event.preventDefault();
