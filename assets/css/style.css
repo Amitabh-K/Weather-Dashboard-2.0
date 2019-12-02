@@ -24,4 +24,7 @@ zoom: .95;
         }
     }
 
-    .form-inline
+    .col-3 {
+        opacity: .5;
+
+    }
