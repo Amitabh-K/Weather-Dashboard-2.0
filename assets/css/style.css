@@ -16,6 +16,14 @@ zoom: .95;
     }
 
 
+
+
+    #current-weather-column  {
+        opacity: .95;
+    }   
+
+
+
     @media screen and (min-width:576px){
         .search-bar{       
             	
