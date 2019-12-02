@@ -1,6 +1,16 @@
 
-/*
-   
+  html{
+
+    scale: 90%;
+  }
+  
+  body {
+
+    zoom: .65;
+    
+        }/*
+
+
 
     */
     .d-flex {
@@ -9,7 +19,6 @@ zoom: .95;
 
     }
 
- 
 
     @media screen and (max-width:576px){
         .search-bar{       
