@@ -119,7 +119,7 @@ function forecast() {
     div2.appendChild(icon);
     var text2 = document.createElement("h6");
     text2.className = "text-dark";
-    text2.textContent = `Temp: ${data.list[i].main.temp.toFixed(1)} ºC`;
+    text2.textContent = `Temp: ${data.list[i].main.temp.toFixed(0)} ºC`;
     div2.appendChild(text2);
     var text3 = document.createElement("h6");
     text3.className = "text-dark";

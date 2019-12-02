@@ -15,13 +15,9 @@ zoom: .95;
 
     }
 
-
-
-
     #current-weather-column  {
         opacity: .95;
     }   
-
 
 
     @media screen and (min-width:576px){
@@ -34,5 +30,16 @@ zoom: .95;
 
     .col-3 {
         opacity: .8;
+
+    }
+    .card-deck{
+
+        color: aliceblue;
+    }
+
+    #forecast-title{
+display: flex;
+    opacity: .8;
+   
 
     }
