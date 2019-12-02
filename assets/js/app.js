@@ -109,11 +109,11 @@ function forecast() {
     var div2 = document.createElement("div");
     div2.className = "card-body";
     div1.appendChild(div2);
-    var text1 = document.createElement("h5");
+    var text1 = document.createElement("h6");
     text1.className = "card-title";
     text1.textContent = `${data.list[i].dt_txt.slice(5, 7)}/${data.list[i].dt_txt.slice(8, 10)}/${data.list[i].dt_txt.slice(0, 4)}`;
     div2.appendChild(text1);
-    var icon = document.createElement("h3");
+    var icon = document.createElement("h4");
     var iconNumber = data.list[i].weather[0].icon
     icon.className = weatherIcon[iconNumber];
     div2.appendChild(icon);
