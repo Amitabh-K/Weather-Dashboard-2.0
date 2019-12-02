@@ -82,10 +82,10 @@ function UVindex() {
     button.className = "btn btn-warning btn-lg";
   }
   else if (data.value >= 6 && data.value < 8) {
-    button.className = "btn btn-orange btn-lg";
+    button.className = "btn btn-danger brown-lg";
   }
   else if (data.value >= 8 && data.value < 11) {
-    button.className = "btn btn-danger btn-lg";
+    button.className = "btn btn-secondary  btn-lg";
   }
   else if (data.value >= 11) {
     button.className = "btn btn-dark btn-lg";
@@ -118,11 +118,11 @@ function forecast() {
     icon.className = weatherIcon[iconNumber];
     div2.appendChild(icon);
     var text2 = document.createElement("h6");
-    text2.className = "text-dark font-weight-bold";
+    text2.className = "text-dark";
     text2.textContent = `Temp: ${data.list[i].main.temp.toFixed(1)} ºC`;
     div2.appendChild(text2);
     var text3 = document.createElement("h6");
-    text3.className = "text-dark font-weight-bold";
+    text3.className = "text-dark";
     text3.textContent = `Humidity: ${data.list[i].main.humidity}%`;
     div2.appendChild(text3);
   }

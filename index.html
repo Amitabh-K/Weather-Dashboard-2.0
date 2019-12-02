@@ -17,29 +17,16 @@
   
 </head>
 
-<body >
+<body class="all" >
   <!-- Heardder -->    
 
-  <div class="jumbotron sticky-top text-center bg-dark  .text-light  ">
+  <div class="jumbotron sticky-top text-center text-info">
       <h1 class="display-4 font-weight-bold .text-light " id="main-title">Weather Dashboard</h1>
   </div>
 
   <div class="container-fluid w-100 container all">
       <div class="row">
-          <!-- Left Search Column -->
-          <div class="col-3 bg-light">
-              <h4 id="search-title">Search for a City:</h4>
-              <!-- City Search -->
-              <form class="form-inline">
-                  <input type="text" class="form-control w-75" id="search-bar">
-                  <button type="submit" class="btn btn-primary" id="search-button"><i
-                          class="fas fa-search"></i></button>
-              </form>
-              <!-- Previous Search History -->
-              <form class="form">
-                  <div class="btn-group-vertical btn-group-lg w-100" id="previous-search"></div>
-              </form>
-          </div>
+         
           
           <!-- Right Forecast Column -->
           <div class="col-9 d-none" id="loading-column">
@@ -50,11 +37,24 @@
               </div>
           </div>
           
-          <div class="col-9 d-none" id="loading-column">
-              
+          <div class="col-9 d-none" id="loading-column">            
  
           </div>
-          <div class="col-9 d-none" id="current-weather-column">
+           <!-- Left Search Column -->
+           <div class="col-3 bg-light m-1">
+                <h4 id="search-title">Search City:</h4>
+                <!-- City Search -->
+                <form class="form-inline">
+                    <input type="text" class="form-control w-75" id="search-bar">
+                    <button type="submit" class="btn btn-primary" id="search-button"><i
+                            class="fas fa-search"></i></button>
+                </form>
+                <!-- Previous Search History -->
+                <form class="form">
+                    <div class="btn-group-vertical btn-group-lg w-100" id="previous-search"></div>
+                </form>
+            </div>
+          <div class="col-9 d-none" id="current-weather-column">           
               
               <div class="row" id="current-weather">
                   <div class="card w-100">
@@ -67,10 +67,8 @@
                       </div>
                   </div>
               </div>
-
-              
-              <div class="row">
-                  <h4 id="forecast-title">5-Day Forecast:</h4>
+              <div class="row bg-light my-2">
+                  <h4 id="forecast-title ">5-Day Forecast:</h4>
               </div>
               
               <div class="row d-flex justify-content-center" id="forecast-cards">
