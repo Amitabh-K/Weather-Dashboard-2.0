@@ -1,17 +1,6 @@
 
 /*
-    @media screen and (min-width:576px){
-        .d-flex{
-        
-            	
-            margin-right: 5%;	
-            padding:6px;
-            border-radius:15%;            
-            color:#010c0b;;
-            font-weight: bold;
-            
-        }
-    }
+   
 
     */
     .d-flex {
@@ -20,4 +9,12 @@ zoom: .95;
 
     }
 
+ 
 
+    @media screen and (max-width:576px){
+        .search-bar{       
+            	
+          width: 75;;
+            
+        }
+    }
