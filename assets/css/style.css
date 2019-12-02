@@ -1,12 +1,8 @@
 
-  html{
-
-    scale: 90%;
-  }
   
   body {
 
-    zoom: .65;
+    zoom: .75;
     
         }/*
 
@@ -20,10 +16,12 @@ zoom: .95;
     }
 
 
-    @media screen and (max-width:576px){
+    @media screen and (min-width:576px){
         .search-bar{       
             	
           width: 75;;
             
         }
     }
+
+    .form-inline
