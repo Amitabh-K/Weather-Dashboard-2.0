@@ -211,7 +211,7 @@ This does not work
       return forecastMid;
   }
 
-  //Shows the input forecast on the page. 
+  //Shows the input forecast on the page. It dynamically adds cards.
   function showWeatherForecast(response) {
       forecastWeatherDivEl.html("");
       var forecastDate = [];
@@ -258,7 +258,25 @@ This does not work
       }
   }
 
-  
+  //Retrieves the forecast for the input ID.
+  function getForecast(cityID) {
+      // api.openweathermap.org/data/2.5/forecast?id={city ID}
+      // clearForecastData();
+      // &units=imperial
+      queryURL = apiCall + "forecast?id=" + cityID + "&units=metric" + "&APPID=" + apiKey;
+      console.log(queryURL);
+      $.ajax({
+          url: queryURL,
+          method: "GET"
+      }).done(function (response) {
+          console.log("Forecast");
+          console.log(response);
+          showWeatherForecast(response);
+      }).fail(function (response) {
+          console.log(response.responseJSON.message);
+          // $("#searchMsg").html(response.responseJSON.message);
+      });
+  }
 
 
 
