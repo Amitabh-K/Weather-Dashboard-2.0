@@ -194,7 +194,22 @@ This does not work
       }
   }
 
-
+  // The API returns 5 days forecast and up to 8 objects for each day (one per hour) i.e. 40 objects are in the response. 
+  // This function extracts the data that is relevant to the input --date variable-- and then it selects the middle value.
+  // We could alternatively calculate the average in future but for the initial version of the app we will take the middle value as the average.
+  function getForeCastForData(date, response) {
+      var forecastList = [];
+      response.list.forEach(function (element) {
+          // Create a new JavaScript Date object based on the timestamp
+          // multiplied by 1000 so that the argument is in milliseconds, not seconds.
+          var dt = new Date(element.dt * 1000);
+          if (date == moment(dt).format("MM-DD-YYYY")) {
+              forecastList.push(element);
+          }
+      });
+      var forecastMid = forecastList[Math.floor(forecastList.length / 2)];
+      return forecastMid;
+  }
 
 
   
