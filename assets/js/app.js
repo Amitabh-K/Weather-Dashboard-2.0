@@ -278,6 +278,15 @@ This does not work
       });
   }
 
+  //Handles the search button click event
+  $("#searchBtn").click(function (event) {    
+      event.preventDefault();
+      var txt = $("#searchText").val();
+      txt = txt.trim();
+      getWeather(txt);
+      
+      
+  });
 
 
 
