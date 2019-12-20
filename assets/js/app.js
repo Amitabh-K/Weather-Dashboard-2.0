@@ -211,6 +211,52 @@ This does not work
       return forecastMid;
   }
 
+  //Shows the input forecast on the page. 
+  function showWeatherForecast(response) {
+      forecastWeatherDivEl.html("");
+      var forecastDate = [];
+      var today = moment();
+      for (var i = 0; i < 5; i++) {
+          // console.log(i);
+          var dt = today.add(1, 'd');
+          var dtString = today.format("MM-DD-YYYY");
+          console.log(dtString);
+          var forecastData = getForeCastForData(dtString, response);
+          console.log(forecastData);
+          var col = $("<div>");
+          col.addClass("col");
+          col.appendTo(forecastWeatherDivEl);
+          // col.html("test");
+          var card = $("<div>");
+          card.addClass("card text-white bg-primary my-3")
+          card.appendTo(col);
+          // card.html("test");
+          var headerEl = $("<div>");
+          headerEl.addClass("card-header");
+          headerEl.html(dtString);
+          headerEl.appendTo(card);
+
+          var cardBody = $("<div>");
+          cardBody.addClass("card-body");
+          cardBody.appendTo(card);
+          var tempEl = $("<p>");
+          tempEl.html("Temp:");
+          tempEl.addClass("card-text");
+          tempEl.appendTo(cardBody);
+          var humEl = $("<p>");
+
+          humEl.html("Humidity:");
+          humEl.addClass("card-text");
+          humEl.appendTo(cardBody);
+          var windEl = $("<p>");
+          windEl.html("Wind Speed:");
+          windEl.addClass("card-text");
+          windEl.appendTo(cardBody);
+          console.log(forecastData);
+          renderCard(forecastData, headerEl, tempEl, humEl, windEl, dtString);
+
+      }
+  }
 
   
 
