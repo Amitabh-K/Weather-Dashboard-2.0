@@ -11,14 +11,6 @@ $(document).ready(function () {
   var currentWeatherUVEl = $("#currentWeatherUV");
   var forecastWeatherDivEl = $("#forecastWeatherDiv");
 
-  /*
-This does not work
-  $( "#searchBtn" ).click(function() {
-    $( "#searchText" ).empty();
-    
-  });
-
-  */
 
   // this function loads the weatherSearches and lastSearch variables
   function loadWeatherSearches() {
@@ -65,7 +57,7 @@ This does not work
       btnDiv.html("");
       weatherSearches.forEach(element => {
           var btn = $("<button>");
-          btn.addClass("btn btn-info mx-3 btn-block");
+          btn.addClass("btn btn-warning mx-3 btn-block");
           btn.html(element);
           btnDiv.append(btn);
           btn.click(function (event) {
@@ -158,7 +150,7 @@ This does not work
               found = true;
               break;
           }
-          console.log("Not found");
+          
       }
       return found;
   }
@@ -195,8 +187,7 @@ This does not work
   }
 
   // The API returns 5 days forecast and up to 8 objects for each day (one per hour) i.e. 40 objects are in the response. 
-  // This function extracts the data that is relevant to the input --date variable-- and then it selects the middle value.
-  // We could alternatively calculate the average in future but for the initial version of the app we will take the middle value as the average.
+  
   function getForeCastForData(date, response) {
       var forecastList = [];
       response.list.forEach(function (element) {
