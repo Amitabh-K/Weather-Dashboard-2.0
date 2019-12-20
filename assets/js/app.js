@@ -219,7 +219,7 @@ $(document).ready(function () {
           col.appendTo(forecastWeatherDivEl);
           // col.html("test");
           var card = $("<div>");
-          card.addClass("card text-white bg-primary my-3")
+          card.addClass("card text-white bg-primary my-2 ")
           card.appendTo(col);
           // card.html("test");
           var headerEl = $("<div>");
