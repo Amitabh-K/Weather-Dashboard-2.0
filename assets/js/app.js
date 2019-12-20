@@ -288,7 +288,11 @@ This does not work
       
   });
 
-
+  // clears  localStorage
+    $("#clearSearches").click(function(){
+      $("#recentSearches").empty();
+      $(localStorage.clear());
+    });
 
 });
 
