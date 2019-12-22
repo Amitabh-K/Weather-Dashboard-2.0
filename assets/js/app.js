@@ -105,8 +105,8 @@ $(document).ready(function () {
       headerEl.html(headerHtml);
       var imgPath = getImagePath(response);
       headerEl.append('<img id="currentImg" src="' + imgPath + '" height="42" width="42" />')
-      TempEl.html("Temperature : " + Math.round(response.main.temp) + " &#8451");
-      HumEl.html("Humidity : " + Math.round(response.main.humidity) + "%");
+      TempEl.html("Temperature: " + Math.round(response.main.temp) + " &#8451");
+      HumEl.html("Humidity: " + Math.round(response.main.humidity) + "%");
       WindEl.html("Wind  : " + Math.round(response.wind.speed) + " KPH");
   }
 

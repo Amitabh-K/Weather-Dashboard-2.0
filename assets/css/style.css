@@ -27,5 +27,11 @@
     cursor: pointer;
     
   }
+
+  .card-text{
+width: max-content;
+
+    
+  }
   
   
