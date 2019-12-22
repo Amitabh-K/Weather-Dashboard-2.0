@@ -120,7 +120,7 @@ $(document).ready(function () {
   function getWeatherByCoords(lon, lat) {
       // weather?lat=35&lon=139&appid
       clearWeatherData();
-      // &units=imperial
+      // &units=metric
       queryURL = apiCall + "weather?lat=" + lat + "&lon=" + lon + "&units=metric" + "&APPID=" + apiKey;
       console.log(queryURL);
       $.ajax({
@@ -159,8 +159,8 @@ $(document).ready(function () {
   function getWeather(txt) {
       if (txt !== "") {
           clearWeatherData();
-          // &units=imperial
-          queryURL = apiCall + "weather?q=" + txt + "&units=imperial" + "&APPID=" + apiKey;
+          // &units=metric
+          queryURL = apiCall + "weather?q=" + txt + "&units=metric" + "&APPID=" + apiKey;
           console.log(queryURL);
           $.ajax({
               url: queryURL,
@@ -253,7 +253,7 @@ $(document).ready(function () {
   function getForecast(cityID) {
       // api.openweathermap.org/data/2.5/forecast?id={city ID}
       // clearForecastData();
-      // &units=imperial
+      // &units=metric
       queryURL = apiCall + "forecast?id=" + cityID + "&units=metric" + "&APPID=" + apiKey;
       console.log(queryURL);
       $.ajax({
