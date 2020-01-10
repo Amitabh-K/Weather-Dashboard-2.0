@@ -9,16 +9,20 @@
     
   }
 
-  #currentWeatherHeader {
+  #currentWeatherUV{
+    width: fit-content;
+    padding: .3%;
+  }
 
-    font-style
-    
-      }
   section{
     width: 960px;
     
     margin: 0 auto;
     
+  }
+
+  .democlass {
+    color: red;
   }
   
   header,footer{

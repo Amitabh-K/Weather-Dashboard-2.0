@@ -41,12 +41,10 @@ $(document).ready(function () {
   }
   else {
       //if there's no Last Search in the storage, and if we can get the current location then show the weather for the current location.
-      navigator.geolocation.getCurrentPosition(function (location) {
-          console.log(location);
-          console.log(location.coords.latitude);
-          console.log(location.coords.longitude);
+      navigator.geolocation.getCurrentPosition(function (location) {      
+       
           getWeatherByCoords(location.coords.longitude, location.coords.latitude);
-          console.log(location.coords.accuracy);
+          
       });
   }
 
@@ -78,14 +76,29 @@ $(document).ready(function () {
       $.ajax({
           url: queryURL,
           method: "GET"
-      }).done(function (response) {
-          console.log(response);
-          currentWeatherUVEl.html("UV : " + response.value);
-      }).fail(function (response) {
-          currentWeatherUVEl.html("UV : Failed to retrieve UV");
-      });
+      }).done(function (response) {          
+        currentWeatherUV.innerHTML   = "UV : " + response.value;
 
-  }
+                 // Changes background color based on danger of UV levels
+                 if (response.value <= 2) {
+                    currentWeatherUV.setAttribute("style", "background-color: #8DE760 ");
+                    
+                } else if (response.value > 2 && response.value <= 5) {
+                    currentWeatherUV.setAttribute("style", "background-color: #E4F06E ");
+                    
+                } else if (response.value >= 5 && response.value <= 8) {
+                    currentWeatherUV.setAttribute("style", "background-color: #EBAC57 ");
+                    
+                } else if (response.value >= 8) {
+                    currentWeatherUV.setAttribute("style", "background-color: #F34343 ");
+                    
+                }
+      
+      });
+   
+}
+
+  
 
   //Clears the current weather section.
   function clearWeatherData() {
