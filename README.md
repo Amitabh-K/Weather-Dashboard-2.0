@@ -1,6 +1,10 @@
 # Weather-Dashboard
 
-![Weather-Dashboard](./assets/images/WeatherDashboard.jpg)
+## Usage demo
+
+![Usage demo](./assets/images/demo.gif)
+
+
 
 This Weather-Dashboard was created with the intention of helping the user view current weather conditions, as well as the forecast for the 5 coming days. Users can also view past cities searched. The project utilizes HTML, CSS, JavaScript and third-party APIs such as Open Weather. This is the sixth project built as a part of the UNCC Coding Bootcamp.
 
@@ -29,6 +33,8 @@ This web application / can be accessed via the link https://amitabh-k.github.io/
 
 Use Inspect Element of Google Chrome to test the responsiveness of the webpageâ€™s on various screen sizes.
 
+![Weather-Dashboard](./assets/images/WeatherDashboard.jpg)
+
 ## Technologies
 
 * HTML
@@ -37,6 +43,8 @@ Use Inspect Element of Google Chrome to test the responsiveness of the webpageâ€
 * [Bootstrap](https://getbootstrap.com/)
 * [jQuery](https://jquery.com/)
 * [OpenWeather](https://openweathermap.org/)
+
+
 
 ## Author
 
